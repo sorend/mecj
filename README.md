@@ -20,20 +20,6 @@ where *y* is the predicted class, *d(a, b)* is the distance measure, *x* is the 
 
 The distance measure *d(a, b)* can be substituted by any of the available distance measures. For example the stoean and minkowski distance measures are expected to work better for non-normalized data, while manhattan and euclidean are faster (expected to be the same) on normalized data.
 
-Demo usage
-----------
-
-See the class svu.testing.MECMain to run some experiments with the classifier
-
-You can also start the included demonstrator web application through Gradle:
-
-    ./gradlew run
-
-Then open one of the following URLs in your browser:
-
-- http://127.0.0.1:8080/public/index.html (prediction using MEC)
-- http://127.0.0.1:8080/public/ps.html    (prediction using RBDC)
-
 Using with WEKA
 ---------------
 
