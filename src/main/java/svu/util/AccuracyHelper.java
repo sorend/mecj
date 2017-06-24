@@ -1,4 +1,4 @@
-package svu.proteinsequences;
+package svu.util;
 
 public class AccuracyHelper {
 

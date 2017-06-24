@@ -2,7 +2,7 @@ package svu.featureselection;
 
 import svu.meclassifier.DistanceFunctionFactory;
 import svu.meclassifier.MultimodalEvolutionaryClassifier;
-import svu.proteinsequences.AccuracyHelper;
+import svu.util.AccuracyHelper;
 
 public class FeatureSelectionHelper {
 
