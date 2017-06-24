@@ -8,7 +8,7 @@ apply plugin: 'maven'
 
 sourceCompatibility = 1.8
 group = "in.ac.svuniversity"
-version = versioning.info.full
+version = versioning.info.display
 
 jar {
     baseName = 'mecj'
