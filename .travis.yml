@@ -16,6 +16,7 @@ before_install:
 deploy:
   provider: script
   skip_cleanup: true
-  script: gradlew deploy
+  script: ./gradlew deploy
   on:
-    branch: /^release.*$/
+    branch:
+    - /^release\/.*$/
