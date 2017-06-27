@@ -4,7 +4,7 @@ apply plugin: 'maven'
 
 sourceCompatibility = 1.8
 group = "svu"
-version = "git describe --tags --long".execute().text
+version = "git describe --tags".execute().text
 
 jar {
     baseName = 'mecj'
