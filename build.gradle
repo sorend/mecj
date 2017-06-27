@@ -7,7 +7,7 @@ apply plugin: 'eclipse'
 apply plugin: 'maven'
 
 sourceCompatibility = 1.8
-group = "in.ac.svuniversity"
+group = "svu"
 version = versioning.info.display
 
 jar {
