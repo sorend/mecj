@@ -18,6 +18,11 @@ dependencies {
     compile 'nz.ac.waikato.cms.weka:weka-dev:3.7.12'
 }
 
+task weka(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = 'weka.gui.Main'
+}
+
 // deploy to conjars
 task deploy(type: Exec, dependsOn: install) {
     executable "scp"
