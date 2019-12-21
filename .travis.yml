@@ -9,6 +9,8 @@ deploy:
   provider: script
   skip_cleanup: true
   script: "./gradlew publish -Dorg.gradle.internal.publish.checksums.insecure=true"
+  on:
+    all_branches: true
 env:
   global:
     secure: GABMcWHP2qvfIfRtBR+3vWRZOS8h1k/qXhmjFL5q/wolTakYdk7Sqkte7KykoURPhvKAOHwHq5Xry0lt6IVHpGMvlP67vrEHW8u+bnHnuqGKqpR/gqkpnTY/vnr2jKCiWdyrDEfLkfpt8RsS84BjEfE2QTOG0K6q/9p4HdeZaEc=
