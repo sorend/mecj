@@ -1,21 +1,18 @@
-apply plugin: 'java'
-apply plugin: 'eclipse'
-apply plugin: 'maven'
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
 
 sourceCompatibility = 1.8
 group = "svu"
-version = "git describe --tags".execute().text.trim()
-
-jar {
-    baseName = 'mecj'
-}
+version = "git describe --tags --dirty".execute().text.trim()
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    compile 'nz.ac.waikato.cms.weka:weka-dev:3.9.4'
+    implementation 'nz.ac.waikato.cms.weka:weka-dev:3.9.4'
 }
 
 task weka(type: JavaExec) {
@@ -23,8 +20,27 @@ task weka(type: JavaExec) {
     main = 'weka.gui.Main'
 }
 
-// deploy to conjars
-task deploy(type: Exec, dependsOn: install) {
-    executable "scp"
-    args "${buildDir}/poms/pom-default.xml", "${buildDir}/libs/mecj-${version}.jar", "repo@conjars.org:"
+wrapper {
+    gradleVersion = "6.0.1"
+}
+
+publishing {
+    publications {
+        dist(MavenPublication) {
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            url = "https://conjars.org/repo"
+            credentials {
+                username = System.getenv("CONJARS_USERNAME")
+                password = System.getenv("CONJARS_PASSWORD")
+            }
+        }
+    }
+}
+
+tasks.withType(GenerateModuleMetadata) {
+    enabled = false
 }
