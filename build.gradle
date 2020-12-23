@@ -21,7 +21,7 @@ task weka(type: JavaExec) {
 }
 
 wrapper {
-    gradleVersion = "6.0.1"
+    gradleVersion = "6.7.1"
 }
 
 publishing {
