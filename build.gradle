@@ -12,7 +12,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'nz.ac.waikato.cms.weka:weka-dev:3.9.5'
+    implementation 'nz.ac.waikato.cms.weka:weka-dev:3.9.6'
 }
 
 task weka(type: JavaExec) {
